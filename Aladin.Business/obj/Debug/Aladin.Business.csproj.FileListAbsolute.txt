@@ -1,0 +1,5 @@
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Business\bin\Debug\Aladin.Business.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Business\bin\Debug\Aladin.Business.pdb
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Business\obj\Debug\Aladin.Business.csproj.CoreCompileInputs.cache
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Business\obj\Debug\Aladin.Business.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Business\obj\Debug\Aladin.Business.pdb
