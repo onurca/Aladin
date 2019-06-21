@@ -1,0 +1,95 @@
+﻿@using Framework.Core.Session
+
+@{
+    Layout = Definition.Url.Layout.Base;
+    ViewBag.Settings = ViewBag.Settings == null ? new ViewSettings("Kooperatif") : ViewBag.Settings;
+}
+
+@section Assets{
+    <!-- CSS Files -->
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/vendor/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/light-bootstrap-dashboard.css?v=@SystemVersion.Get()" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    <link href="~/Content/vendor/metisMenu/metisMenu.css" rel="stylesheet" />
+    <link href="~/Content/vendor/multiselect/css/multi-select.css" rel="stylesheet" />
+    <link href="~/Content/vendor/jquery/css/jquery-ui-1.10.0.custom.css" rel="stylesheet" />
+
+    <!-- JS Files -->
+    <script src="~/Content/vendor/jquery/jquery-ui.min.js"></script>
+    <script src="~/Content/vendor/moment/moment.min.js"></script>
+    <script src="~/Content/vendor/multiselect/js/jquery.multi-select.js"></script>
+    <script src="~/Content/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap-notify.min.js"></script>
+    <script src="~/Scripts/Common/notify.js?v=@SystemVersion.Get()"></script>
+    <script src="~/Scripts/kooperatif.js?v=@SystemVersion.Get()"></script>
+}
+
+<div class="wrapper">
+    @Html.Partial("_Menu")
+
+    <div class="main-panel">
+        <nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/Admin/Main">Yönetim Paneli - @ViewBag.Settings.PageTitle</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        @if (SessionManager.User.IsAuthenticated)
+                        {
+                            <li>
+                                <a href="@Definition.Url.Authentication.Settings"><i class="fa fa-gear fa-fw"></i> Profilim - @SessionManager.User.FullName</a>
+                            </li>
+                            <li>
+                                <a href="javascript:(0);" onclick="Authentication.Logout()"><i class="fa fa-sign-out fa-fw"></i> Çıkış Yap</a>
+                            </li>
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="content">
+                @RenderBody()
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <nav class="pull-left">
+                    <ul>
+                        <li>
+                            <a href="/">
+                                Anasayfa
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <p class="copyright pull-right">
+                    &copy;
+                    <script>document.write(new Date().getFullYear())</script>
+                </p>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<!--   Core JS Files   -->
+<script src="~/Content/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/Areas/Admin/Content/js/light-bootstrap-dashboard.js"></script>
+
+<!--   Custom JS Files   -->
+<script src="~/Scripts/Common/datepicker.js?v=@SystemVersion.Get()"></script>
+<script src="~/Scripts/Common/multiselect.js?v=@SystemVersion.Get()"></script>
+<script src="~/Scripts/Common/autocomplete.js?v=@SystemVersion.Get()"></script>
+<script src="~/Areas/Admin/Scripts/Authentication.js?v=@SystemVersion.Get()"></script>

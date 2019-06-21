@@ -1,0 +1,103 @@
+﻿@using Framework.Core.Session
+
+@model Guid?
+@{
+    Layout = Definition.Url.Layout.Grid;
+    ViewBag.Settings = ViewBag.Settings == null ? new ViewSettings("Duyuru Listesi") : ViewBag.Settings;
+}
+
+@Html.Hidden("CategoryID", Model)
+
+@section PanelButtons{
+    @if (Model != Guid.Empty && SessionManager.User.IsInRole(new Guid[] { Definition.Role.System, Definition.Role.Contributor }))
+    {
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                Eylemler
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu pull-right" role="menu">
+                <li>
+                    <a href="/Admin/Announcement/Item?&Announcement.CategoryID=@Model&Announcement.ID=@Guid.NewGuid()">Ekle</a>
+                </li>
+            </ul>
+        </div>
+    }
+}
+
+@section Script{
+    @if (SessionManager.User.IsInRole(new Guid[] { Definition.Role.System, Definition.Role.Contributor }))
+    {
+        <script>
+            $(document).ready(function () {
+                var Grid = $('#grid').Grid({
+                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Announcement", "Get"),
+                    query: {
+                        CategoryID: $("#CategoryID").val()
+                    },
+                    columns: [
+                        { "Name": "Title", "Title": "Konu" },
+                        { "Name": "Date", "Title": "Tarih" },
+                          {
+                              "Name": "Görüntüle",
+                              "Template": function (data) {
+                                  return Fox.Helper.Grid.Template.Button.FontAwesome("fa fa-eye").on("click", function () {
+                                      window.location.href = "/Admin/Announcement/Display?Announcement.ID={0}".format(data.ID);
+                                  })
+                              }
+                          },
+                        {
+                            "Name": "Güncelle",
+                            "Template": function (data) {
+                                return Fox.Helper.Grid.Template.Button.Edit().on("click", function () {
+                                    window.location.href = "/Admin/Announcement/Item?Announcement.ID={0}".format(data.ID);
+                                })
+                            }
+                        },
+                        {
+                            "Name": "Sil",
+                            "Template": function (data) {
+                                return Fox.Helper.Grid.Template.Button.Delete().on("click", function () {
+                                    $.ajax({
+                                        url: Fox.Helper.Grid.GenerateUrl("Admin", "Announcement", "Delete"),
+                                        type: "POST",
+                                        data: { id: data.ID },
+                                        success: function () {
+                                            Grid.Reset();
+                                        }
+                                    })
+                                })
+                            }
+                        }
+                    ]
+                });
+            });
+        </script>
+    }
+    else
+    {
+        <script>
+            $(document).ready(function () {
+                $('#grid').Grid({
+                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Announcement", "Get"),
+                    query: {
+                        CategoryID: $("#CategoryID").val()
+                    },
+                    columns: [
+                        { "Name": "Title", "Title": "Konu" },
+                        { "Name": "Date", "Title": "Tarih" },
+                          {
+                              "Name": "Görüntüle",
+                              "Template": function (data) {
+                                  return Fox.Helper.Grid.Template.Button.FontAwesome("fa fa-eye").on("click", function () {
+                                      window.location.href = "/Admin/Announcement/Display?Announcement.Category.ID={0}&Announcement.ID={1}".format("@Model", data.ID);
+                                  })
+                              }
+                          },
+                    ]
+                });
+            });
+        </script>
+    }
+}
+

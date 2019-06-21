@@ -1,0 +1,74 @@
+﻿@using Framework.Core.Session
+
+@model Guid?
+@{
+    Layout = Definition.Url.Layout.Grid;
+    ViewBag.Settings = ViewBag.Settings == null ? new ViewSettings("Aidat Listesi") : ViewBag.Settings;
+}
+
+@Html.Hidden("CategoryID", Model)
+
+@section Script{
+    @if (SessionManager.User.IsInRole(new Guid[] { Definition.Role.System, Definition.Role.Contributor }))
+    {
+        <script>
+            $(document).ready(function () {
+                var Grid = $('#grid').Grid({
+                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Dues", "Get"),
+                    orderBy: "Date",
+                    columns: [
+                        { "Name": "FirstName", "Title": "İsim" },
+                        { "Name": "LastName", "Title": "Soyisim" },
+                        { "Name": "Month", "Title": "Ay" },
+                        { "Name": "Year", "Title": "Yıl" },
+                        { "Name": "PaidAmount", "Title": "Ödenen" },
+                        { "Name": "RequiredAmount", "Title": "Ödenmesi Gereken" },
+                        {
+                            "Name": "Güncelle",
+                            "Template": function (data) {
+                                return Fox.Helper.Grid.Template.Button.Edit().on("click", function () {
+                                    window.location.href = "/Admin/Dues/Item/{0}".format(data.ID);
+                                })
+                            }
+                        },
+                          {
+                              "Name": "Sil",
+                              "Template": function (data) {
+                                  return Fox.Helper.Grid.Template.Button.Delete().on("click", function () {
+                                      $.ajax({
+                                          url: Fox.Helper.Grid.GenerateUrl("Admin", "Dues", "Delete"),
+                                          type: "POST",
+                                          data: { id: data.ID },
+                                          success: function () {
+                                              Grid.Reset();
+                                          }
+                                      })
+                                  })
+                              }
+                          }
+                    ]
+                });
+            });
+        </script>
+    }
+    else
+    {
+        <script>
+            $(document).ready(function () {
+                $('#grid').Grid({
+                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Dues", "Get"),
+                    columns: [
+                        { "Name": "FirstName", "Title": "İsim" },
+                        { "Name": "LastName", "Title": "Soyisim" },
+                        { "Name": "Month", "Title": "Ay" },
+                        { "Name": "Year", "Title": "Yıl" },
+                        { "Name": "PaidAmount", "Title": "Ödenen" },
+                        { "Name": "RequiredAmount", "Title": "Ödenmesi Gereken" }
+                    ]
+                });
+            });
+        </script>
+    }
+
+}
+

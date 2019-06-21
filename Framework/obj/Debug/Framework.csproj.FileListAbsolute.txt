@@ -51,7 +51,6 @@ C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Framework\bin\Debug\S
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Framework\bin\Debug\System.Web.WebPages.xml
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Framework\bin\Debug\System.Web.WebPages.Deployment.xml
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Framework\bin\Debug\System.Web.WebPages.Razor.xml
-C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Framework\obj\Debug\Framework.csprojAssemblyReference.cache
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Framework\obj\Debug\Framework.csproj.CoreCompileInputs.cache
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Framework\obj\Debug\Framework.csproj.CopyComplete
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Framework\obj\Debug\Framework.dll

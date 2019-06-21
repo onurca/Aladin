@@ -10,6 +10,7 @@ namespace Framework.ViewModel
         {
             public static readonly string Login = "/Admin/Authentication/Login";
             public static readonly string Main = "/Main/Index";
+            public static readonly string ReturnUrl = "/Yonetim/Main";
 
             public static class Admin
             {

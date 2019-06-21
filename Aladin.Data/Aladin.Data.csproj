@@ -50,7 +50,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AladinContext.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="City.cs" />
+    <Compile Include="Category.cs" />
+    <Compile Include="CustomerFood.cs" />
+    <Compile Include="Enum\RoomStatus.cs" />
+    <Compile Include="Enum\IdentityDocument.cs" />
+    <Compile Include="Enum\PaymentMethod.cs" />
+    <Compile Include="Enum\RoomType.cs" />
+    <Compile Include="File.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Reservation.cs" />
+    <Compile Include="Enum\ReservationStatus.cs" />
+    <Compile Include="Food.cs" />
+    <Compile Include="Room.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Framework\Framework.csproj">

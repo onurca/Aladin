@@ -1,0 +1,39 @@
+﻿@{
+    Layout = Definition.Url.Layout.Dashboard;
+    ViewBag.Settings = ViewBag.Settings == null ? new ViewSettings("Kooperatif") : ViewBag.Settings;
+}
+
+<script src="~/Scripts/Common/foxgrid.js?v=@SystemVersion.Get()"></script>
+<script src="~/Scripts/Common/foxpagination.js?v=@SystemVersion.Get()"></script>
+<script>
+    (function ($) {
+        "use strict";
+        $.fn.extend({
+            Grid: Fox.Helper.Grid.Constructor
+        });
+
+        $.fn.extend({
+            Pagination: Fox.Helper.Pagination.Constructor
+        });
+    })(jQuery)
+</script>
+
+@RenderSection("Script")
+
+
+<div class="col-md-12 col-sm-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @ViewBag.Settings.PageTitle
+            <div class="pull-right">
+                @RenderSection("PanelButtons", false)
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table id="grid" class="table table-striped table-bordered"></table>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+</div>

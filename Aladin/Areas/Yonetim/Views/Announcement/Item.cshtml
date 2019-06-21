@@ -1,0 +1,43 @@
+﻿@model AnnouncementViewModel
+
+@{
+    Layout = Definition.Url.Layout.Dropzone;
+    ViewBag.Settings = string.IsNullOrEmpty(Model.Announcement.Title) ? new ViewSettings("Duyuru", "Announcement.Create()", "Kaydet") : new ViewSettings("Duyuru Güncelle", "Announcement.Update()", "Güncelle");
+}
+
+
+@Html.Dropzone()
+
+<form id="formItems">
+    @Html.HiddenFor(x => x.Announcement.ID)
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.Announcement.Category)
+        @Html.DropDownListFor(x => x.Announcement.CategoryID, Model.Categories, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Announcement.Title)
+        @Html.BootstrapTextBoxFor(x => x.Announcement.Title)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Announcement.Body)
+        @Html.BootstrapTextAreaFor(x => x.Announcement.Body)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Announcement.Date)
+        @Html.DatePickerFor(x => x.Announcement.Date)
+    </div>
+</form>
+
+<div class="form-group">
+    <input type="button" class="btn btn-success float-right" value=@ViewBag.Settings.SubmitTitle onclick=@ViewBag.Settings.SubmitAction />
+</div>
+
+<script src="~/Areas/Admin/Scripts/Announcement.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#Announcement_Body').summernote();
+    });
+</script>
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>

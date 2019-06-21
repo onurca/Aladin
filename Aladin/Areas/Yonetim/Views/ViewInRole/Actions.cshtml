@@ -1,0 +1,7 @@
+﻿@model ViewInRoleViewModel
+@{
+    Layout = null;
+}
+
+@Html.LabelFor(x => x.ViewNames)
+@Html.MultiSelectFor(x => x.ViewNames, Model.ViewsWithControllerGroup)

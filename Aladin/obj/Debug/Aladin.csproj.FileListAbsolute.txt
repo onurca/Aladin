@@ -74,3 +74,15 @@ C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\obj\Debug\Alad
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\obj\Debug\Aladin.csproj.CopyComplete
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\obj\Debug\Aladin.dll
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\obj\Debug\Aladin.pdb
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Aladin.Business.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Aladin.Model.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Framework.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Aladin.Data.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\EntityFramework.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Aladin.Business.pdb
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Aladin.Model.pdb
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Framework.pdb
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Framework.dll.config
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Aladin.Data.pdb
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\Aladin.Data.dll.config
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin\bin\EntityFramework.xml

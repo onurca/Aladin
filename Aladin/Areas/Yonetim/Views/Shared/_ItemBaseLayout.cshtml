@@ -1,0 +1,25 @@
+﻿@{
+    Layout = Definition.Url.Layout.Dashboard;
+    ViewBag.Settings = ViewBag.Settings == null ? new ViewSettings("Kooperatif") : ViewBag.Settings;
+}
+
+<div class="col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @ViewBag.Settings.PageTitle
+            <div class="pull-right">
+            </div>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <form id="formItems">
+                @RenderBody()
+            </form>
+            <div class="form-group">
+                <input type="button" class="btn btn-success float-right" value='@ViewBag.Settings.SubmitTitle' onclick=@ViewBag.Settings.SubmitAction />
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+    <!-- /.panel -->
+</div>

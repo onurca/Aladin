@@ -120,6 +120,23 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Yonetim\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\AuthenticationController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\AuthenticationController.Json.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\CategoryController.Json.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\FileController.Json.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\LogController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\LogController.Json.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\MainController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\RoleController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\RoleController.Json.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\UserController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\UserController.Json.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\UserInRoleController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\UserInRoleController.Json.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\ViewInRoleController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\ViewInRoleController.Json.cs" />
     <Compile Include="Controllers\AuthenticatedController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -131,6 +148,22 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Yonetim\Content\css\animate.min.css" />
+    <Content Include="Areas\Yonetim\Content\css\light-bootstrap-dashboard.css" />
+    <Content Include="Areas\Yonetim\Content\css\pe-icon-7-stroke.css" />
+    <Content Include="Areas\Yonetim\Content\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="Areas\Yonetim\Content\img\sidebar-2.jpg" />
+    <Content Include="Areas\Yonetim\Content\img\sidebar-3.jpg" />
+    <Content Include="Areas\Yonetim\Content\img\sidebar-4.jpg" />
+    <Content Include="Areas\Yonetim\Content\img\sidebar-5.jpg" />
+    <Content Include="Areas\Yonetim\Content\js\light-bootstrap-dashboard.js" />
+    <Content Include="Areas\Yonetim\Scripts\Announcement.js" />
+    <Content Include="Areas\Yonetim\Scripts\Authentication.js" />
+    <Content Include="Areas\Yonetim\Scripts\Category.js" />
+    <Content Include="Areas\Yonetim\Scripts\Dues.js" />
+    <Content Include="Areas\Yonetim\Scripts\Role.js" />
+    <Content Include="Areas\Yonetim\Scripts\User.js" />
+    <Content Include="Areas\Yonetim\Scripts\ViewInRole.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -141,6 +174,36 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\Yonetim\Content\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="Areas\Yonetim\Content\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="Areas\Yonetim\Content\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="Areas\Yonetim\Views\Announcement\Display.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Announcement\Homepage.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Announcement\Item.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Announcement\List.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Authentication\Login.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Authentication\Settings.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Category\Item.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Category\List.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Dues\Item.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Dues\List.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Log\Display.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Log\List.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Main\Index.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Role\Item.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Role\List.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Shared\_Dropzone.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Shared\_GridLayout.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Shared\_ItemBaseLayout.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Shared\_Menu.cshtml" />
+    <Content Include="Areas\Yonetim\Views\UserInRole\Item.cshtml" />
+    <Content Include="Areas\Yonetim\Views\User\Item.cshtml" />
+    <Content Include="Areas\Yonetim\Views\User\List.cshtml" />
+    <Content Include="Areas\Yonetim\Views\ViewInRole\Actions.cshtml" />
+    <Content Include="Areas\Yonetim\Views\ViewInRole\Item.cshtml" />
+    <Content Include="Areas\Yonetim\Views\web.config" />
+    <Content Include="Areas\Yonetim\Views\_ViewStart.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -186,6 +249,10 @@
     <ProjectReference Include="..\Aladin.Business\Aladin.Business.csproj">
       <Project>{0123c6ee-3ff7-42f2-9b1c-8c6beb52a5c1}</Project>
       <Name>Aladin.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aladin.Model\Aladin.Model.csproj">
+      <Project>{efddd0ed-384f-47ea-8585-011dfb5774b6}</Project>
+      <Name>Aladin.Model</Name>
     </ProjectReference>
     <ProjectReference Include="..\Framework\Framework.csproj">
       <Project>{109e8b53-2df4-43fc-8e5d-5c97b44e1044}</Project>

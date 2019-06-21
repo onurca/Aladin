@@ -1,0 +1,19 @@
+﻿@model UserInRoleViewModel
+@{
+    Layout = Definition.Url.Layout.Item;
+    ViewBag.Settings = new ViewSettings("Kullanıcı rol tanımla", "User.UpdateRoles()", "Güncelle");
+}
+
+<script src="~/Areas/Admin/Scripts/User.js"></script>
+
+@Html.HiddenFor(x => x.UserId)
+
+<div class="form-group">
+    @Html.LabelFor(x => x.FullName)
+    @Html.BootstrapTextBoxFor(x => x.FullName, new { @disabled = "true" })
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(x => x.UserRoles)
+    @Html.MultiSelectFor(x => x.Roles, Model.UserRoles)
+</div>

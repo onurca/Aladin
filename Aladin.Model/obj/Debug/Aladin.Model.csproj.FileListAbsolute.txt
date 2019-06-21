@@ -1,0 +1,7 @@
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\bin\Debug\Aladin.Model.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\bin\Debug\Aladin.Model.pdb
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\bin\Debug\System.Web.Mvc.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\obj\Debug\Aladin.Model.csproj.CoreCompileInputs.cache
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\obj\Debug\Aladin.Model.csproj.CopyComplete
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\obj\Debug\Aladin.Model.dll
+C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\obj\Debug\Aladin.Model.pdb

@@ -1,0 +1,11 @@
+﻿@model AnnouncementViewModel
+
+@{
+    Layout = Definition.Url.Layout.Dropzone;
+    ViewBag.Settings = new ViewSettings("Anasayfa Resimleri", "Anasayfa Resimleri");
+}
+
+@Html.HiddenFor(x => x.Announcement.ID)
+@Html.HiddenFor(x => x.Announcement.Category.ID)
+@Html.Dropzone()
+

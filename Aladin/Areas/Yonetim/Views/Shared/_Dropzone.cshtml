@@ -1,0 +1,22 @@
+﻿@{
+    Layout = Definition.Url.Layout.Dashboard;
+}
+<script src="~/Content/vendor/dropzone/dropzone.js"></script>
+<link href="~/Content/vendor/dropzone/css/dropzone.css" rel="stylesheet" />
+
+<div class="col-md-12 col-sm-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            @ViewBag.Settings.PageTitle
+            <div class="pull-right">
+            </div>
+        </div>
+        <div class="panel-body">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Common/datepicker.js?v=@SystemVersion.Get()"></script>
+<script src="~/Scripts/Common/foxdropzone.js?v=@SystemVersion.Get()"></script>
+

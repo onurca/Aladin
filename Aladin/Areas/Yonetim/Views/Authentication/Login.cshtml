@@ -1,0 +1,17 @@
+﻿@model LoginViewModel
+@{
+    Layout = Definition.Url.Layout.Item;
+    ViewBag.Settings = new ViewSettings("Giriş Yap", "Authentication.Login()", "Giriş");
+}
+
+<div class="panel">
+    <p>Lütfen kullanıcı adınızı ve şifrenizi giriniz.</p>
+</div>
+@Html.HiddenFor(x => x.returnUrl)
+
+<div class="form-group">
+    @Html.BootstrapTextBoxFor(x => x.IdentificationNumber, true)
+</div>
+<div class="form-group">
+    @Html.BootstrapPasswordFor(x => x.Password, true)
+</div>

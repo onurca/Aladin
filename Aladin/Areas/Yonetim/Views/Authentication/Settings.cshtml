@@ -1,0 +1,15 @@
+﻿@model SettingsViewModel
+@{
+    Layout = Definition.Url.Layout.Item;
+    ViewBag.Settings = new ViewSettings("Profilim", "Authentication.PasswordUpdate()", "Şifreyi Değiştir");}
+
+<div class="panel">
+    <pre>İlk defa giriş yapıyorsanız bu ekrandan şifrenizi değiştirmeniz gerekmektedir.</pre>
+</div>
+<div class="form-group">
+    @Html.BootstrapPasswordFor(x => x.Password, true)
+</div>
+<div class="form-group">
+    @Html.BootstrapPasswordFor(x => x.ConfirmPassword, true)
+</div>
+

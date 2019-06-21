@@ -1,0 +1,42 @@
+﻿@using Framework.Model.Logger
+@model Log
+@{
+    Layout = Definition.Url.Layout.Dashboard;
+}
+
+<div class="col-md-12">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="pull-right">
+            </div>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+            <div class="form-group">
+                @Html.LabelFor(x => x.CorrelationId)
+                @Html.BootstrapTextBoxFor(x => x.CorrelationId).DisableIf(() => true)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.CreatedDate)
+                @Html.DatePickerFor(x => x.CreatedDate).DisableIf(() => true)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.LogLevel)
+                @Html.BootstrapTextBoxFor(x => x.LogLevel).DisableIf(() => true)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Message)
+                @Html.BootstrapTextAreaFor(x => x.Message).DisableIf(() => true)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.StackTrace)
+                @Html.BootstrapTextAreaFor(x => x.StackTrace).DisableIf(() => true)
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.Location)
+                @Html.BootstrapTextBoxFor(x => x.Location).DisableIf(() => true)
+            </div>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+</div>

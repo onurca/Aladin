@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aladin.Business", "Aladin.B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aladin.Data", "Aladin.Data\Aladin.Data.csproj", "{1FAE5EF9-C479-4EE3-91F4-5AA7BC36FDA5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Definition", "Definition", "{6877BFBE-316A-4E32-923C-01A5E3720C46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aladin.Model", "Aladin.Model\Aladin.Model.csproj", "{EFDDD0ED-384F-47EA-8585-011DFB5774B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,17 @@ Global
 		{1FAE5EF9-C479-4EE3-91F4-5AA7BC36FDA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1FAE5EF9-C479-4EE3-91F4-5AA7BC36FDA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1FAE5EF9-C479-4EE3-91F4-5AA7BC36FDA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFDDD0ED-384F-47EA-8585-011DFB5774B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFDDD0ED-384F-47EA-8585-011DFB5774B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFDDD0ED-384F-47EA-8585-011DFB5774B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFDDD0ED-384F-47EA-8585-011DFB5774B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1FAE5EF9-C479-4EE3-91F4-5AA7BC36FDA5} = {6877BFBE-316A-4E32-923C-01A5E3720C46}
+		{EFDDD0ED-384F-47EA-8585-011DFB5774B6} = {6877BFBE-316A-4E32-923C-01A5E3720C46}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {03CA5A39-9A04-4B2F-BB8C-B74FBF8791FF}

@@ -1,0 +1,25 @@
+﻿@model User
+@{
+    Layout = Definition.Url.Layout.Item;
+    ViewBag.Settings = Model.IsNew ? new ViewSettings("Kullanıcı Oluştur", "User.Create()","Kaydet") : new ViewSettings("Kullanıcı Güncelle", "User.Update()", "Güncelle");
+}
+
+<script src="~/Areas/Admin/Scripts/User.js"></script>
+
+@Html.HiddenFor(x => x.ID)
+<div class="form-group">
+    @Html.LabelFor(x => x.FirstName)
+    @Html.BootstrapTextBoxFor(x => x.FirstName)
+</div>
+<div class="form-group">
+    @Html.LabelFor(x => x.LastName)
+    @Html.BootstrapTextBoxFor(x => x.LastName)
+</div>
+<div class="form-group">
+    @Html.LabelFor(x => x.IdentificationNumber)
+    @Html.BootstrapTextBoxFor(x => x.IdentificationNumber)
+</div>
+<div class="form-group">
+    @Html.LabelFor(x => x.Password)
+    @Html.BootstrapTextBoxFor(x => x.Password)
+</div>

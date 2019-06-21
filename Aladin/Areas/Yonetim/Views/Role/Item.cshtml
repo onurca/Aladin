@@ -1,0 +1,12 @@
+﻿@model Role
+@{
+    Layout = Definition.Url.Layout.Item;
+    ViewBag.Settings = Model.IsNew ? new ViewSettings("Rol Oluştur", "Role.Save()", "Kaydet") : new ViewSettings("Rol Güncelle", "Role.Update()", "Güncelle");
+}
+<script src="~/Areas/Admin/Scripts/Role.js"></script>
+
+@Html.HiddenFor(x => x.ID)
+<div class="form-group">
+    @Html.LabelFor(x => x.Name)
+    @Html.BootstrapTextBoxFor(x => x.Name)
+</div>

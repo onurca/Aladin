@@ -1,0 +1,30 @@
+﻿@{
+    Layout = Definition.Url.Layout.Grid;
+    ViewBag.Settings = ViewBag.Settings == null ? new ViewSettings("Log Listesi") : ViewBag.Settings;
+}
+
+@section Script{
+    <script>
+        $(document).ready(function () {
+            var Grid = $('#grid').Grid({
+                url: Fox.Helper.Grid.GenerateUrl("Admin", "Log", "Get"),
+                columns: [
+                    { "Name": "ID", "Title": "Correlation Id", sortable: true},
+                    { "Name": "Location", "Title": "Konum", sortable: true },
+                    { "Name": "CreatedDate", "Title": "Tarih", sortable: true },
+                     {
+                         "Name": "Görüntüle",
+                         "Template": function (data) {
+                             return Fox.Helper.Grid.Template.Button.FontAwesome("fa fa-eye").on("click", function () {
+                                 window.location.href = "/Admin/Log/Display/{0}".format(data.ID);
+                             })
+                         }
+                     }
+                ]
+            });
+        });
+    </script>
+}
+
+
+

@@ -1,0 +1,50 @@
+﻿@{
+    Layout = Definition.Url.Layout.Grid;
+    ViewBag.Settings = ViewBag.Settings == null ? new ViewSettings("Kullanıcı Listesi") : ViewBag.Settings;
+}
+
+@section Script{
+    <script>
+        $(document).ready(function () {
+            var Grid = $('#grid').Grid({
+                url: Fox.Helper.Grid.GenerateUrl("Admin", "User", "Get"),
+                columns: [
+                    { "Name": "FirstName", "Title": "İsim", sortable: true },
+                    { "Name": "LastName", "Title": "Soyisim", sortable: true },
+                    {
+                        "Name": "Rol Tanımla",
+                        "Template": function (data) {
+                            return Fox.Helper.Grid.Template.Button.FontAwesome("fa fa-shield").on("click", function () {
+                                window.location.href = Fox.Helper.Grid.GenerateUrl("Admin", "UserInRole", "Item", data.ID);
+                            })
+                        }
+                    },
+                    {
+                        "Name": "Güncelle",
+                        "Template": function (data) {
+                            return Fox.Helper.Grid.Template.Button.Edit().on("click", function () {
+                                window.location.href = Fox.Helper.Grid.GenerateUrl("Admin", "User", "Item", data.ID);
+                            })
+                        }
+                    },
+                    {
+                        "Name": "Sil",
+                        "Template": function (data) {
+                            return Fox.Helper.Grid.Template.Button.Delete().on("click", function () {
+                                $.ajax({
+                                    url: Fox.Helper.Grid.GenerateUrl("Admin", "User", "Delete"),
+                                    type: "POST",
+                                    data: { id: data.ID },
+                                    success: function () {
+                                        Grid.Reset();
+                                    }
+                                })
+                            })
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+}
+
