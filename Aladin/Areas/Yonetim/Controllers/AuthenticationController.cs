@@ -1,5 +1,6 @@
 ﻿using Aladin.Areas.Yonetim.Models;
 using Aladin.Controllers;
+using Framework.ViewModel;
 using System.Web.Mvc;
 
 namespace Aladin.Areas.Yonetim.Controllers
@@ -10,7 +11,7 @@ namespace Aladin.Areas.Yonetim.Controllers
         {
             if (IsAuthenticated)
             {
-                returnUrl = returnUrl ?? "/Admin/Main";
+                returnUrl = returnUrl ?? Definition.Url.ReturnUrl;
 
                 return Redirect(returnUrl);
             }

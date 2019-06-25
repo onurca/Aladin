@@ -65,7 +65,7 @@ namespace Aladin.Areas.Yonetim.Controllers
                 }
 
             }
-            catch (Exception Ex)
+            catch (Exception)
             {
                 throw new HttpException(HttpStatusCode.InternalServerError.ToInt(), Definition.Message.Dropzone.Error);
             }

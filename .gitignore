@@ -1,4 +1,22 @@
 
 packages/
 
+Framework/bin/
+
+Framework/obj/
+
+Aladin\.Model/obj/
+
+Aladin\.Data/bin/
+
+Aladin\.Data/obj/
+
 Aladin\.Data/AladinContext\.cs
+
+Aladin/bin/
+
+Aladin/obj/
+
+Aladin\.Business/bin/
+
+Aladin\.Business/obj/
