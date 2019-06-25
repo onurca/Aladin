@@ -5,3 +5,11 @@ C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\obj\Debu
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\obj\Debug\Aladin.Model.csproj.CopyComplete
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\obj\Debug\Aladin.Model.dll
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Model\obj\Debug\Aladin.Model.pdb
+D:\Repositories\Aladin\Aladin.Model\bin\Debug\Aladin.Model.dll
+D:\Repositories\Aladin\Aladin.Model\bin\Debug\Aladin.Model.pdb
+D:\Repositories\Aladin\Aladin.Model\bin\Debug\System.Web.Mvc.dll
+D:\Repositories\Aladin\Aladin.Model\obj\Debug\Aladin.Model.csprojAssemblyReference.cache
+D:\Repositories\Aladin\Aladin.Model\obj\Debug\Aladin.Model.csproj.CoreCompileInputs.cache
+D:\Repositories\Aladin\Aladin.Model\obj\Debug\Aladin.Model.csproj.CopyComplete
+D:\Repositories\Aladin\Aladin.Model\obj\Debug\Aladin.Model.dll
+D:\Repositories\Aladin\Aladin.Model\obj\Debug\Aladin.Model.pdb

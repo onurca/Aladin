@@ -42,7 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IRoomService.cs" />
+    <Compile Include="Interfaces\IReservationService.cs" />
     <Compile Include="Interfaces\IFileService.cs" />
+    <Compile Include="Services\RoomService.cs" />
+    <Compile Include="Services\ReservationService.cs" />
     <Compile Include="Services\CategoryService.cs" />
     <Compile Include="Services\Common\Service.cs" />
     <Compile Include="Services\FileService.cs" />

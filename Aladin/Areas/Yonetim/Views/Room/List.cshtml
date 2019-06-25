@@ -1,0 +1,42 @@
+﻿@{
+    Layout = Definition.Url.Layout.Grid;
+    ViewBag.Settings = ViewBag.Settings == null ? new ViewSettings("Oda Listesi") : ViewBag.Settings;
+}
+
+@section Script{
+    <script>
+        $(document).ready(function () {
+            var Grid = $('#grid').Grid({
+                url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Room", "Get"),
+                columns: [
+                    { "Name": "Name", "Title": "İsim" },
+               
+                    {
+                        "Name": "Güncelle",
+                        "Template": function (data) {
+                            return Fox.Helper.Grid.Template.Button.Edit().on("click", function () {
+                                window.location.href = Fox.Helper.Grid.GenerateUrl("Yonetim", "Room", "Item", data.ID);
+                            })
+                        }
+                    },
+                    {
+                        "Name": "Sil",
+                        "Template": function (data) {
+                            return Fox.Helper.Grid.Template.Button.Delete().on("click", function () {
+                                $.ajax({
+                                    url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Room", "Delete"),
+                                    type:"POST",
+                                    data: { id: data.ID },
+                                    success: function () {
+                                        Grid.Reset();
+                                    }
+                                })
+                            })
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+}
+

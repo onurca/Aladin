@@ -8,7 +8,7 @@ namespace Aladin.Areas.Yonetim
         {
             get
             {
-                return "admin";
+                return "yonetim";
             }
         }
 
@@ -16,7 +16,7 @@ namespace Aladin.Areas.Yonetim
         {
             context.MapRoute(
                 "Admin_default",
-                "admin/{controller}/{action}/{id}",
+                "yonetim/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional, area = AreaName },
                 new[] { "Aladin.Areas.Yonetim.Controllers" }
             );

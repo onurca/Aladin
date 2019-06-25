@@ -1,0 +1,12 @@
+﻿@model Room
+@{
+    Layout = Definition.Url.Layout.Item;
+    ViewBag.Settings = Model.IsNew ? new ViewSettings("Oda Oluştur", "Room.Create()", "Kaydet") : new ViewSettings("Oda Güncelle", "Room.Update()", "Güncelle");
+}
+<script src="~/Areas/Yonetim/Scripts/Room.js"></script>
+
+@Html.HiddenFor(x => x.ID)
+<div class="form-group">
+    @Html.LabelFor(x => x.Name)
+    @Html.BootstrapTextBoxFor(x => x.Name)
+</div>

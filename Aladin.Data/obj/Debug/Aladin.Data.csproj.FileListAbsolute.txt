@@ -26,3 +26,31 @@ C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Data\bin\Debug
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Data\obj\Debug\Aladin.Data.csproj.CopyComplete
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Data\obj\Debug\Aladin.Data.dll
 C:\Users\Onur\Documents\Visual Studio 2017\Projects\Aladin\Aladin.Data\obj\Debug\Aladin.Data.pdb
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\Aladin.Data.dll.config
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\Aladin.Data.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\Aladin.Data.pdb
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\EntityFramework.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\Framework.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\Newtonsoft.Json.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.Mvc.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.Razor.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.WebPages.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\Framework.pdb
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\Framework.dll.config
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\EntityFramework.xml
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\Newtonsoft.Json.xml
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.Mvc.xml
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.Razor.xml
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.WebPages.xml
+D:\Repositories\Aladin\Aladin.Data\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Repositories\Aladin\Aladin.Data\obj\Debug\Aladin.Data.csprojAssemblyReference.cache
+D:\Repositories\Aladin\Aladin.Data\obj\Debug\Aladin.Data.csproj.CoreCompileInputs.cache
+D:\Repositories\Aladin\Aladin.Data\obj\Debug\Aladin.Data.csproj.CopyComplete
+D:\Repositories\Aladin\Aladin.Data\obj\Debug\Aladin.Data.dll
+D:\Repositories\Aladin\Aladin.Data\obj\Debug\Aladin.Data.pdb
