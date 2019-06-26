@@ -5,7 +5,7 @@ namespace Aladin.Areas.Yonetim.Controllers
 {
     public class MainController : AuthenticatedController
     {
-        // GET: Admin/Home
+        // GET: Yonetim/Home
         public ActionResult Index()
         {
             return View();

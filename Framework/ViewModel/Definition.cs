@@ -8,48 +8,48 @@ namespace Framework.ViewModel
     {
         public static class Url
         {
-            public static readonly string Login = "/Admin/Authentication/Login";
+            public static readonly string Login = "/Yonetim/Authentication/Login";
             public static readonly string Main = "/Main/Index";
             public static readonly string ReturnUrl = "/Yonetim/Main";
 
-            public static class Admin
+            public static class Yonetim
             {
-                public static readonly string Main = "/Admin/Main/Index";
+                public static readonly string Main = "/Yonetim/Main/Index";
             }
             public static class Authentication
             {
-                public static readonly string Settings = "/Admin/Authentication/Settings";
+                public static readonly string Settings = "/Yonetim/Authentication/Settings";
             }
 
             public static class Announcement
             {
-                public static readonly string List = "/Admin/Announcement/List";
+                public static readonly string List = "/Yonetim/Announcement/List";
             }
 
             public static class Dues
             {
-                public static readonly string List = "/Admin/Dues/List";
+                public static readonly string List = "/Yonetim/Dues/List";
             }
 
             public static class Layout
             {
                 public static readonly string Empty = "";
-                public static readonly string Item = "~/Areas/Admin/Views/Shared/_ItemBaseLayout.cshtml";
-                public static readonly string Dashboard = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+                public static readonly string Item = "~/Areas/Yonetim/Views/Shared/_ItemBaseLayout.cshtml";
+                public static readonly string Dashboard = "~/Areas/Yonetim/Views/Shared/_Layout.cshtml";
                 public static readonly string Main = "~/Views/Shared/_Layout.cshtml";
                 public static readonly string Base = "~/Views/Shared/_BaseLayout.cshtml";
-                public static readonly string Grid = "~/Areas/Admin/Views/Shared/_GridLayout.cshtml";
-                public static readonly string Dropzone = "~/Areas/Admin/Views/Shared/_Dropzone.cshtml";
+                public static readonly string Grid = "~/Areas/Yonetim/Views/Shared/_GridLayout.cshtml";
+                public static readonly string Dropzone = "~/Areas/Yonetim/Views/Shared/_Dropzone.cshtml";
             }
 
             public static class UserInRole
             {
-                public static readonly string Item = "/Admin/UserInRole/Item";
+                public static readonly string Item = "/Yonetim/UserInRole/Item";
             }
 
             public static class User
             {
-                public static readonly string Item = "/Admin/User/Item";
+                public static readonly string Item = "/Yonetim/User/Item";
             }
         }
 

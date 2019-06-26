@@ -1,7 +1,7 @@
-﻿using Framework.Core.Extensions;
+﻿using Aladin.Models;
+using Framework.Core.Extensions;
 using Framework.Core.Logger;
 using Framework.ViewModel;
-using Kooperatif.Models;
 using System;
 using System.Net;
 using System.Web;
@@ -88,7 +88,7 @@ namespace Aladin.Helpers
             IController controller;
             var currentRouteData = RouteTable.Routes.GetRouteData(new HttpContextWrapper(httpContext));
             factory = ControllerBuilder.Current.GetControllerFactory();
-            requestContext.RouteData.DataTokens["Area"] = "Admin";
+            requestContext.RouteData.DataTokens["Area"] = "Yonetim";
 
             try
             {

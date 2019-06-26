@@ -1,7 +1,7 @@
 ﻿var User = new function () {
 	this.Create = function () {
 		$.ajax({
-			url: "/admin/user/create",
+			url: "/Yonetim/user/create",
 			type: "POST",
 			data: $("#formItems").serialize()
 		})
@@ -9,7 +9,7 @@
 
 	this.Update = function () {
 		$.ajax({
-			url: "/admin/user/update",
+			url: "/Yonetim/user/update",
 			type: "POST",
 			data: $("#formItems").serialize()
 		})
@@ -17,7 +17,7 @@
 
 	this.UpdateRoles = function () {
 		$.ajax({
-			url: "/admin/UserInRole/update",
+			url: "/Yonetim/UserInRole/update",
 			type: "POST",
 			data: $("#formItems").serialize()
 		})

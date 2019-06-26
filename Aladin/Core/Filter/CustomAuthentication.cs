@@ -60,7 +60,7 @@ namespace Aladin.Core.Filter
                             {
                                 action = "login",
                                 controller = "authentication",
-                                //area = "admin",
+                                area = "yonetim",
                                 returnUrl
                             }));
                         }

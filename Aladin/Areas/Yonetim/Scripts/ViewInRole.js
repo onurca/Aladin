@@ -1,7 +1,7 @@
 ﻿var ViewInRole = new function () {
 	this.GetViewsByRoleId = function () {
 		$.ajax({
-			url: "/admin/ViewInRole/Actions",
+			url: "/Yonetim/ViewInRole/Actions",
 			type: "GET",
 			data: $("#formItems").serialize(),
 			success: function (result) {
@@ -13,7 +13,7 @@
 
 	this.UpdateViewsInRole = function () {
 	    $.ajax({
-	        url: "/admin/ViewInRole/update",
+			url: "/Yonetim/ViewInRole/update",
 	        type: "POST",
 	        data: $("#formItems").serialize()
 	    })

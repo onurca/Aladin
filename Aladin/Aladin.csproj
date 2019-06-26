@@ -45,6 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.Mvc5.4.0.2\lib\net45\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -117,10 +129,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutofacConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DataModule.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Areas\Yonetim\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Yonetim\YonetimAreaRegistration.cs" />
     <Compile Include="Areas\Yonetim\Controllers\AuthenticationController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\AuthenticationController.Json.cs" />
     <Compile Include="Areas\Yonetim\Controllers\CategoryController.cs" />
@@ -184,6 +198,8 @@
     <Content Include="Content\css\bootstrap-theme.min.css" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\material-kit.css" />
+    <Content Include="Content\css\material-kit.min.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\fonts\bootstrap\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\fl-budicons-free.svg" />
@@ -291,8 +307,70 @@
     <Content Include="Content\images\youtube-play.png" />
     <Content Include="Content\images\_blank.png" />
     <Content Include="Content\js\core.min.js" />
+    <Content Include="Content\js\core\bootstrap-material-design.min.js" />
+    <Content Include="Content\js\core\jquery.min.js" />
+    <Content Include="Content\js\core\popper.min.js" />
     <Content Include="Content\js\custom\reservation.js" />
+    <Content Include="Content\js\material-kit.js" />
+    <Content Include="Content\js\material-kit.min.js" />
+    <Content Include="Content\js\plugins\bootstrap-datetimepicker.js" />
+    <Content Include="Content\js\plugins\jquery.sharrre.js" />
+    <Content Include="Content\js\plugins\moment.min.js" />
+    <Content Include="Content\js\plugins\nouislider.min.js" />
     <Content Include="Content\js\script.js" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap-datetimepicker.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap-notify.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\dropzone\css\dropzone.css" />
+    <Content Include="Content\vendor\dropzone\dropzone.js" />
+    <Content Include="Content\vendor\dropzone\images\spritemap%402x.png" />
+    <Content Include="Content\vendor\dropzone\images\spritemap.png" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\vendor\jquery\css\jquery-ui-1.10.0.custom.css" />
+    <Content Include="Content\vendor\jquery\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\vendor\jquery\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\vendor\jquery\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\vendor\jquery\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\vendor\jquery\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\vendor\jquery\images\ui-bg_glass_75_ffffff_1x400.png" />
+    <Content Include="Content\vendor\jquery\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\vendor\jquery\images\ui-bg_inset-soft_95_fef1ec_1x100.png" />
+    <Content Include="Content\vendor\jquery\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\vendor\jquery\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\vendor\jquery\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\vendor\jquery\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\vendor\jquery\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\vendor\jquery\images\ui-icons_f6cf3b_256x240.png" />
+    <Content Include="Content\vendor\jquery\jquery-ui.min.js" />
+    <Content Include="Content\vendor\jquery\jquery.js" />
+    <Content Include="Content\vendor\jquery\jquery.min.js" />
+    <Content Include="Content\vendor\lightbox\css\lightbox.css" />
+    <Content Include="Content\vendor\lightbox\css\lightbox.min.css" />
+    <Content Include="Content\vendor\lightbox\images\close.png" />
+    <Content Include="Content\vendor\lightbox\images\loading.gif" />
+    <Content Include="Content\vendor\lightbox\images\next.png" />
+    <Content Include="Content\vendor\lightbox\images\prev.png" />
+    <Content Include="Content\vendor\lightbox\js\lightbox-plus-jquery.js" />
+    <Content Include="Content\vendor\lightbox\js\lightbox-plus-jquery.min.js" />
+    <Content Include="Content\vendor\lightbox\js\lightbox.js" />
+    <Content Include="Content\vendor\lightbox\js\lightbox.min.js" />
+    <Content Include="Content\vendor\metisMenu\metisMenu.css" />
+    <Content Include="Content\vendor\metisMenu\metisMenu.js" />
+    <Content Include="Content\vendor\metisMenu\metisMenu.min.css" />
+    <Content Include="Content\vendor\metisMenu\metisMenu.min.js" />
+    <Content Include="Content\vendor\moment\moment.min.js" />
+    <Content Include="Content\vendor\multiselect\css\multi-select.css" />
+    <Content Include="Content\vendor\multiselect\css\multi-select.dev.css" />
+    <Content Include="Content\vendor\multiselect\css\multi-select.dist.css" />
+    <Content Include="Content\vendor\multiselect\img\switch.png" />
+    <Content Include="Content\vendor\multiselect\js\jquery.multi-select.js" />
     <Content Include="Content\videos\Aladin Hotel.mp4" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -365,7 +443,6 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
@@ -386,6 +463,53 @@
     <Content Include="Areas\Yonetim\Views\Reservation\List.cshtml" />
     <Content Include="Areas\Yonetim\Views\Room\Item.cshtml" />
     <Content Include="Areas\Yonetim\Views\Room\List.cshtml" />
+    <Content Include="Content\css\material-kit.css.map" />
+    <Content Include="Content\js\material-kit.js.map" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\vendor\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\vendor\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\vendor\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\vendor\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\vendor\font-awesome\less\animated.less" />
+    <Content Include="Content\vendor\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\vendor\font-awesome\less\core.less" />
+    <Content Include="Content\vendor\font-awesome\less\extras.less" />
+    <Content Include="Content\vendor\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\vendor\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\vendor\font-awesome\less\icons.less" />
+    <Content Include="Content\vendor\font-awesome\less\larger.less" />
+    <Content Include="Content\vendor\font-awesome\less\list.less" />
+    <Content Include="Content\vendor\font-awesome\less\mixins.less" />
+    <Content Include="Content\vendor\font-awesome\less\path.less" />
+    <Content Include="Content\vendor\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\vendor\font-awesome\less\screen-reader.less" />
+    <Content Include="Content\vendor\font-awesome\less\spinning.less" />
+    <Content Include="Content\vendor\font-awesome\less\stacked.less" />
+    <Content Include="Content\vendor\font-awesome\less\variables.less" />
+    <Content Include="Content\vendor\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_core.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_extras.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_list.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_path.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_spinning.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\vendor\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\vendor\lightbox\js\lightbox-plus-jquery.min.map" />
+    <Content Include="Content\vendor\lightbox\js\lightbox.min.map" />
+    <Content Include="Content\vendor\multiselect\css\multi-select.dev.css.map" />
     <None Include="packages.config" />
     <Content Include="Views\Shared\_Loader.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
@@ -394,11 +518,19 @@
     <Content Include="Views\Shared\_Gallery.cshtml" />
     <Content Include="Views\Shared\_Aboutus.cshtml" />
     <Content Include="Views\Shared\_Slider.cshtml" />
+    <Content Include="Views\Shared\_Error.cshtml" />
+    <Content Include="Views\Shared\_BaseLayout.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_Modal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Aladin.Business\Aladin.Business.csproj">
       <Project>{0123c6ee-3ff7-42f2-9b1c-8c6beb52a5c1}</Project>
       <Name>Aladin.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Aladin.Data\Aladin.Data.csproj">
+      <Project>{1fae5ef9-c479-4ee3-91f4-5aa7bc36fda5}</Project>
+      <Name>Aladin.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\Aladin.Model\Aladin.Model.csproj">
       <Project>{efddd0ed-384f-47ea-8585-011dfb5774b6}</Project>

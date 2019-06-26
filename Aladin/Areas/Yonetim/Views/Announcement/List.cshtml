@@ -18,7 +18,7 @@
             </button>
             <ul class="dropdown-menu pull-right" role="menu">
                 <li>
-                    <a href="/Admin/Announcement/Item?&Announcement.CategoryID=@Model&Announcement.ID=@Guid.NewGuid()">Ekle</a>
+                    <a href="/Yonetim/Announcement/Item?&Announcement.CategoryID=@Model&Announcement.ID=@Guid.NewGuid()">Ekle</a>
                 </li>
             </ul>
         </div>
@@ -31,7 +31,7 @@
         <script>
             $(document).ready(function () {
                 var Grid = $('#grid').Grid({
-                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Announcement", "Get"),
+                    url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Announcement", "Get"),
                     query: {
                         CategoryID: $("#CategoryID").val()
                     },
@@ -42,7 +42,7 @@
                               "Name": "Görüntüle",
                               "Template": function (data) {
                                   return Fox.Helper.Grid.Template.Button.FontAwesome("fa fa-eye").on("click", function () {
-                                      window.location.href = "/Admin/Announcement/Display?Announcement.ID={0}".format(data.ID);
+                                      window.location.href = "/Yonetim/Announcement/Display?Announcement.ID={0}".format(data.ID);
                                   })
                               }
                           },
@@ -50,7 +50,7 @@
                             "Name": "Güncelle",
                             "Template": function (data) {
                                 return Fox.Helper.Grid.Template.Button.Edit().on("click", function () {
-                                    window.location.href = "/Admin/Announcement/Item?Announcement.ID={0}".format(data.ID);
+                                    window.location.href = "/Yonetim/Announcement/Item?Announcement.ID={0}".format(data.ID);
                                 })
                             }
                         },
@@ -59,7 +59,7 @@
                             "Template": function (data) {
                                 return Fox.Helper.Grid.Template.Button.Delete().on("click", function () {
                                     $.ajax({
-                                        url: Fox.Helper.Grid.GenerateUrl("Admin", "Announcement", "Delete"),
+                                        url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Announcement", "Delete"),
                                         type: "POST",
                                         data: { id: data.ID },
                                         success: function () {
@@ -79,7 +79,7 @@
         <script>
             $(document).ready(function () {
                 $('#grid').Grid({
-                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Announcement", "Get"),
+                    url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Announcement", "Get"),
                     query: {
                         CategoryID: $("#CategoryID").val()
                     },
@@ -90,7 +90,7 @@
                               "Name": "Görüntüle",
                               "Template": function (data) {
                                   return Fox.Helper.Grid.Template.Button.FontAwesome("fa fa-eye").on("click", function () {
-                                      window.location.href = "/Admin/Announcement/Display?Announcement.Category.ID={0}&Announcement.ID={1}".format("@Model", data.ID);
+                                      window.location.href = "/Yonetim/Announcement/Display?Announcement.Category.ID={0}&Announcement.ID={1}".format("@Model", data.ID);
                                   })
                               }
                           },

@@ -14,7 +14,7 @@
         <script>
             $(document).ready(function () {
                 var Grid = $('#grid').Grid({
-                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Dues", "Get"),
+                    url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Dues", "Get"),
                     orderBy: "Date",
                     columns: [
                         { "Name": "FirstName", "Title": "İsim" },
@@ -27,7 +27,7 @@
                             "Name": "Güncelle",
                             "Template": function (data) {
                                 return Fox.Helper.Grid.Template.Button.Edit().on("click", function () {
-                                    window.location.href = "/Admin/Dues/Item/{0}".format(data.ID);
+                                    window.location.href = "/Yonetim/Dues/Item/{0}".format(data.ID);
                                 })
                             }
                         },
@@ -36,7 +36,7 @@
                               "Template": function (data) {
                                   return Fox.Helper.Grid.Template.Button.Delete().on("click", function () {
                                       $.ajax({
-                                          url: Fox.Helper.Grid.GenerateUrl("Admin", "Dues", "Delete"),
+                                          url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Dues", "Delete"),
                                           type: "POST",
                                           data: { id: data.ID },
                                           success: function () {
@@ -56,7 +56,7 @@
         <script>
             $(document).ready(function () {
                 $('#grid').Grid({
-                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Dues", "Get"),
+                    url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Dues", "Get"),
                     columns: [
                         { "Name": "FirstName", "Title": "İsim" },
                         { "Name": "LastName", "Title": "Soyisim" },

@@ -1,0 +1,36 @@
+﻿@model ErrorInfo
+@{
+    Layout = Definition.Url.Layout.Dashboard;
+    ViewBag.Settings = ViewBag.Settings == null ? new ViewSettings("Internal Server Error") : ViewBag.Settings;
+
+}
+
+<style>
+    body {
+        margin: 0;
+        background-color: #f8f9fa;
+        font-family: arial;
+        height: 700px;
+        color: black;
+    }
+</style>
+
+<div class="container-fluid p-0">
+    <section class="resume-section col-md-12 d-flex flex-column justify-content-center align-items-center">
+        <div class="my-auto">
+            <div class="inline-block align-middle">
+                <h2 class="font-weight-normal lead" id="desc">@Model.Message</h2>
+
+                @if (Model != null && HttpContext.Current.IsDebuggingEnabled)
+                {
+                    <p>
+                        <b>Exception:</b> @Model.Exception.Message<br />
+                        <b>Controller:</b> @Model.ControllerName<br />
+                        <b>Action:</b> @Model.ActionName<br />
+                        <b>CorrelationId:</b> @Model.CorrelationId
+                    </p>
+                }
+            </div>
+        </div>
+    </section>
+</div>

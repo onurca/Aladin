@@ -51,6 +51,7 @@
     <Compile Include="Enum\ReservationStatus.cs" />
     <Compile Include="Enum\RoomStatus.cs" />
     <Compile Include="Enum\RoomType.cs" />
+    <Compile Include="ErrorInfo.cs" />
     <Compile Include="File.cs" />
     <Compile Include="Login.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

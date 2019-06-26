@@ -1,9 +1,9 @@
 ﻿@using Framework.Core.Session
 
-<div class="sidebar" data-color="purple" data-image="/Areas/Admin/Content/img/sidebar-4.jpg">
+<div class="sidebar" data-color="purple" data-image="/Areas/Yonetim/Content/img/sidebar-4.jpg">
     <div class="sidebar-wrapper">
         <div class="logo">
-            <a href="/Admin/Main" class="simple-text">
+            <a href="/Yonetim/Main" class="simple-text">
                 Feysan Konut
             </a>
         </div>
@@ -14,12 +14,12 @@
                     <a><i class="fa fa-wrench fa-fw"></i> Aidat<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/Admin/Dues/List">Durumum</a>
+                            <a href="/Yonetim/Dues/List">Durumum</a>
                         </li>
                         @if (SessionManager.User.IsInRole(new Guid[] { Definition.Role.System, Definition.Role.Contributor, Definition.Role.Administrator }))
                         {
                             <li>
-                                <a href="/Admin/Dues/Item">Ekle</a>
+                                <a href="/Yonetim/Dues/Item">Ekle</a>
                             </li>
                         }
                     </ul>
@@ -31,13 +31,13 @@
                         @foreach (var item in (List<Category>)Framework.Core.Caching.CacheProvider.Instance.Get("Category"))
                         {
                             <li>
-                                <a href="/Admin/Announcement/List/@item.ID">@item.Name</a>
+                                <a href="/Yonetim/Announcement/List/@item.ID">@item.Name</a>
                             </li>
                         }
                         @if (SessionManager.User.IsInRole(new Guid[] { Definition.Role.System, Definition.Role.Administrator, Definition.Role.Contributor }))
                         {
                             <li>
-                                <a href="/Admin/Announcement/List/">Hepsi</a>
+                                <a href="/Yonetim/Announcement/List/">Hepsi</a>
                             </li>
                         }
                     </ul>
@@ -50,10 +50,10 @@
                     <a><i class="fa fa-wrench fa-fw"></i> Üye<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/Admin/User/List">Liste</a>
+                            <a href="/Yonetim/User/List">Liste</a>
                         </li>
                         <li>
-                            <a href="/Admin/User/Item">Ekle</a>
+                            <a href="/Yonetim/User/Item">Ekle</a>
                         </li>
                     </ul>
                 </li>
@@ -61,7 +61,7 @@
                     <a><i class="fa fa-wrench fa-fw"></i> Anasayfa<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/Admin/Announcement/Homepage?Announcement.ID=@Definition.Category.HomePageLightBox">Resimler</a>
+                            <a href="/Yonetim/Announcement/Homepage?Announcement.ID=@Definition.Category.HomePageLightBox">Resimler</a>
                         </li>
                     </ul>
                 </li>
@@ -73,10 +73,10 @@
                     <a><i class="fa fa-wrench fa-fw"></i> Rol<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/Admin/Role/List">Liste</a>
+                            <a href="/Yonetim/Role/List">Liste</a>
                         </li>
                         <li>
-                            <a href="/Admin/Role/Item">Ekle</a>
+                            <a href="/Yonetim/Role/Item">Ekle</a>
                         </li>
                     </ul>
                 </li>
@@ -85,10 +85,10 @@
                     <a><i class="fa fa-wrench fa-fw"></i> Kategori<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/Admin/Category/List">Liste</a>
+                            <a href="/Yonetim/Category/List">Liste</a>
                         </li>
                         <li>
-                            <a href="/Admin/Category/Item">Ekle</a>
+                            <a href="/Yonetim/Category/Item">Ekle</a>
                         </li>
                     </ul>
                 </li>
@@ -96,7 +96,7 @@
                     <a><i class="fa fa-wrench fa-fw"></i> Log<span class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
                         <li>
-                            <a href="/Admin/Log/List">Liste</a>
+                            <a href="/Yonetim/Log/List">Liste</a>
                         </li>
                     </ul>
                 </li>

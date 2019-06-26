@@ -5,7 +5,7 @@
 			return;
 		}
 		$.ajax({
-			url: "/admin/announcement/create",
+			url: "/Yonetim/announcement/create",
 			type: "POST",
 			data: $("#formItems").serialize()
 		});
@@ -17,7 +17,7 @@
 			return;
 		}
 		$.ajax({
-			url: "/admin/announcement/update",
+			url: "/Yonetim/announcement/update",
 			type: "POST",
 			data: $("#formItems").serialize()
 		});
@@ -27,7 +27,7 @@
 		var query = { ReferenceGuid: $("#Announcement_ID").val() }
 
 		$.ajax({
-			url: "/Admin/File/Get",
+			url: "/Yonetim/File/Get",
 			data: query,
 			success: function (result) {
 				result = JSON.parse(result)["Data"];

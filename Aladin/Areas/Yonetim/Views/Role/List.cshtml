@@ -7,14 +7,14 @@
     <script>
         $(document).ready(function () {
             var Grid = $('#grid').Grid({
-                url: Fox.Helper.Grid.GenerateUrl("Admin", "Role", "Get"),
+                url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Role", "Get"),
                 columns: [
                     { "Name": "Name", "Title": "İsim" },
                     {
                         "Name": "Sayfa Yetkkilendirme",
                         "Template": function (data) {
                             return Fox.Helper.Grid.Template.Button.FontAwesome("fa fa-shield").on("click", function () {
-                                window.location.href = Fox.Helper.Grid.GenerateUrl("Admin", "ViewInRole", "Item", data.ID);
+                                window.location.href = Fox.Helper.Grid.GenerateUrl("Yonetim", "ViewInRole", "Item", data.ID);
                             })
                         }
                     },
@@ -22,7 +22,7 @@
                         "Name": "Güncelle",
                         "Template": function (data) {
                             return Fox.Helper.Grid.Template.Button.Edit().on("click", function () {
-                                window.location.href = Fox.Helper.Grid.GenerateUrl("Admin", "Role", "Item", data.ID);
+                                window.location.href = Fox.Helper.Grid.GenerateUrl("Yonetim", "Role", "Item", data.ID);
                             })
                         }
                     },
@@ -31,7 +31,7 @@
                         "Template": function (data) {
                             return Fox.Helper.Grid.Template.Button.Delete().on("click", function () {
                                 $.ajax({
-                                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Role", "Delete"),
+                                    url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Role", "Delete"),
                                     type: "POST",
                                     data: { id: data.ID },
                                     success: function () {

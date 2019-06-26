@@ -7,7 +7,7 @@
     <script>
         $(document).ready(function () {
             var Grid = $('#grid').Grid({
-                url: Fox.Helper.Grid.GenerateUrl("Admin", "Category", "Get"),
+                url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Category", "Get"),
                 columns: [
                     { "Name": "Name", "Title": "İsim" },
                
@@ -15,7 +15,7 @@
                         "Name": "Güncelle",
                         "Template": function (data) {
                             return Fox.Helper.Grid.Template.Button.Edit().on("click", function () {
-                                window.location.href = Fox.Helper.Grid.GenerateUrl("Admin", "Category", "Item", data.ID);
+                                window.location.href = Fox.Helper.Grid.GenerateUrl("Yonetim", "Category", "Item", data.ID);
                             })
                         }
                     },
@@ -24,7 +24,7 @@
                         "Template": function (data) {
                             return Fox.Helper.Grid.Template.Button.Delete().on("click", function () {
                                 $.ajax({
-                                    url: Fox.Helper.Grid.GenerateUrl("Admin", "Category", "Delete"),
+                                    url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Category", "Delete"),
                                     type:"POST",
                                     data: { id: data.ID },
                                     success: function () {

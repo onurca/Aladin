@@ -19,7 +19,7 @@ namespace Aladin.Model
             }
             set
             {
-                _returnUrl = value ?? "/Admin/Dues/List";
+                _returnUrl = value ?? "/Yonetim/Dues/List";
             }
         }
     }

@@ -72,7 +72,7 @@ namespace Aladin.Areas.Yonetim.Controllers
 
             SessionManager.User.Password = model.Password;
 
-            var result = new Result(Definition.Message.Updated, Definition.Url.Admin.Main);
+            var result = new Result(Definition.Message.Updated, Definition.Url.Yonetim.Main);
 
             return Result(result);
         }

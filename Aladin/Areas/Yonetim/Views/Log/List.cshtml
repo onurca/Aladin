@@ -7,7 +7,7 @@
     <script>
         $(document).ready(function () {
             var Grid = $('#grid').Grid({
-                url: Fox.Helper.Grid.GenerateUrl("Admin", "Log", "Get"),
+                url: Fox.Helper.Grid.GenerateUrl("Yonetim", "Log", "Get"),
                 columns: [
                     { "Name": "ID", "Title": "Correlation Id", sortable: true},
                     { "Name": "Location", "Title": "Konum", sortable: true },
@@ -16,7 +16,7 @@
                          "Name": "Görüntüle",
                          "Template": function (data) {
                              return Fox.Helper.Grid.Template.Button.FontAwesome("fa fa-eye").on("click", function () {
-                                 window.location.href = "/Admin/Log/Display/{0}".format(data.ID);
+                                 window.location.href = "/Yonetim/Log/Display/{0}".format(data.ID);
                              })
                          }
                      }
